@@ -1,0 +1,36 @@
+	#v{color:gold;font-size:25px;margin-left:50px;}
+body {
+    background-image: url("4.JFIF");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+ .nav-items{
+	margin-left:45%;
+	text-decoration: none;
+    }
+.h1{
+	background-color:black;
+	color:black;
+	padding:30px;
+	width:1228px;
+	height:40px;
+	opacity:0.7;
+	margin-left:-10px;
+	margin-top:-10px;
+	text-decoration: none;
+}
+.h2{
+    background-color:black;
+    color:white;
+    padding:30px;
+    width:200px;
+    height: 350px;
+    margin-left:60px;
+    margin-top:10px;
+    opacity:0.8 ;
+}
+.h3{
+   color:gold;
+   text-decoration:none;
+}
