@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+   background: linear-gradient(#141e30, #243b55);
+  background-attachment: fixed;
+}
+
+.content {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.heading {
+  width: 100%;
+  margin-left: 1rem;
+  font-weight: 900;
+  font-size: 1.618rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1ch;
+  line-height: 1;
+  padding-bottom: 0.5em;
+  margin-bottom: 1rem;
+  position: relative;
+  background: -webkit-linear-gradient(135deg,rgb(238, 223, 15),rgb(33, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heading:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  bottom: 0;
+}
+
+.description {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+  background: -webkit-linear-gradient(135deg,   rgb(238, 223, 15),rgb(33, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  color: inherit;
+  cursor: pointer;
+  width: calc(33% - 2rem);
+  min-width: calc(33% - 2rem);
+  height: 400px;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 1rem;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.front,
+.back {
+  display: flex;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+  
+}
+
+.front {
+  background-size: cover;
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: -moz-linear-gradient(top, #128897, #fff);
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  
+}
+.front:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  opacity: 1;
+  z-index: -1;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .front {
+  transform: rotateY(-180deg);
+}
+
+.back {
+  background: pink;
+  transform: rotateY(-180deg);
+  padding: 0 2em;
+  font-weight: 900;
+}
+.back .button {
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+}
+.back .button:before {
+  box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+  background-color: rgba(26, 87, 230, 0.25);
+}
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+.card:nth-child(even) .back {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even) .back .button {
+  background: linear-gradient(135deg, #e61a80, #e61a3c);
+}
+.card:nth-child(even) .back .button:before {
+  box-shadow: 0 0 10px 10px rgba(230, 26, 60, 0.25);
+  background-color: rgba(230, 26, 60, 0.25);
+}
+.card:nth-child(even):hover .back {
+  transform: rotateY(0deg);
+}
+
+.button {
+  transform: translateZ(40px);
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  font: inherit;
+  border: none;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 300ms ease;
+}
+.button:before {
+  transition: 300ms ease;
+  position: absolute;
+  display: block;
+  content: "";
+  transform: translateZ(-40px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  border-radius: 100px;
+  left: 10px;
+  top: 16px;
+}
+.button:hover {
+  transform: translateZ(55px);
+}
+.button:hover:before {
+  transform: translateZ(-55px);
+}
+.button:active {
+  transform: translateZ(20px);
+}
+.button:active:before {
+  transform: translateZ(-20px);
+  top: 12px;
+}
+.pizza{
+    width:290px;
+    height:275px;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: -60px;
+    border-radius: 30px;
+}
+.name{
+    position: absolute;
+    bottom: -15px;
+    background: -webkit-linear-gradient(135deg,   rgba(85, 77, 77, 0.651),white,rgb(216, 214, 214));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-size: 25px;
+    font-family: 'Times New Roman', cursive;
+}
+
+
+    </style>
+</head>
+<body >
+ <form  action="{{ url_for("items")}}" method="POST" >
+<div class="content">
+    <h1 class="heading">SELECT WHAT MADE YOU "HAPPY"</h1>
+    <p class="description">Hover over a card to flip it.</p><a class="card" href="#!">
+      <div class="front" >
+        <img src="/static/pizza (1).jpg" class="pizza">
+        <p class="name">Veggie-Paradise</p>
+        
+
+      </div>
+      
+      <div class="back">
+        <div>
+          <p> This delicious pie dates all the way back to 18th century in Naples, Italy and readily available through numerous street vendors.</p>
+          <button type="submit" class="button" name='item' value='Veggie-Paradise'>Click Here</button>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front">
+        <img src="/static/pizza (2).jpg" class="pizza">
+        <p class="name">Margherita</p>
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>With its characteristic large, foldable slices and crispy outer crust, New York-style pizza is one of America’s most famous regional pizza types. </p>
+          <button type="submit" class="button" name='item' value='Margherita'>Click Here</button>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" >
+        <img src="/static/pizza (4).jpg" class="pizza">
+        <p class="name">Capricciosa</p>
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Sicilian pizza, also known as "sfincione," provides a thick cut of pizza with pillowy dough, a crunchy crust, and robust tomato sauce.</p>
+          <button type="submit" class="button" name='item' value='Capricciosa'>Click Here</button>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" >
+        <img src="/static/pizza (5).jpg" class="pizza">
+        <p class="name">Cheesy-Delight</p>
+        
+      </div>
+      <div class="back">
+        <div>
+          <p> Detroit pizza is first topped with pepperoni, followed by brick cheese which is spread to the very edges of the pan, yielding a caramelized cheese perimeter. </p>
+          <button type="submit" class="button" name='item' value='Cheesy-Delight'>Click Here</button>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" >
+        <img src="/static/pizza (10).jpg" class="pizza" style="width:200%;">
+        <p class="name">Hawaiian</p>
+        
+      </div>
+      <div class="back">
+        <div>
+          <p> Greek-style pizza, especially popular in the New England states, features a thick and chewy crust cooked in shallow, oiled pans, resulting in a nearly deep-fried bottom.</p>
+          <button type="submit" class="button" name='item' value='Hawaiian'>Click Here</button>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front">
+        <img src="/static/pizza (9).jpg" class="pizza">
+        <p class="name">Caesars pizza</p>
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Looking for a light slice? St. Louis pizza features a gooey combination of cheddar, Swiss, and provolone cheeses with a cracker like consistency.</p>
+          <button type="submit" class="button" name='item' value='Caesars pizza'>Click Here</button>
+        </div>
+      </div></a>
+  </div></form>   
+</body>
+</html></html>

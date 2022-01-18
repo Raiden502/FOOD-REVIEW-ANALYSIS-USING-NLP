@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>food </title>
+  <link rel="stylesheet" href="{{url_for("static", filename=('input.css')) }}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .checked {
+    color: yellow;
+  }
+    .login-box{
+      width:600px;
+    }
+    .tag{
+      margin-top: 550px; 
+      margin-left: 420px; 
+      font-size: 30px;
+      background: -webkit-linear-gradient(135deg,#fc5c7d,#fc5c7d, #6a82fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .user-box{
+      height:80px;
+      width:420px;
+      border-radius: 10px;
+      margin-left: 35px;
+    }
+    button {
+      
+      border-radius: 10px;
+      background-image: linear-gradient(135deg,#7b4397,#dc2430);
+      border: none;
+      color: #FFFFFF;
+      margin-left: 40px;
+      font-size: 18px;
+      margin-top: 20px;
+      width: 100px;
+      cursor: pointer;
+      
+      height:40px;
+    }
+  </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2 class="l1">Write a review</h2>
+        <form action="/review" method="POST" autocomplete="off">
+        <input type="text" class="user-box" name='review'  placeholder="write a review" required>
+        <br>
+          <button  type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+        </form>
+      </div>
+      
+<br></br>
+<h3 class="tag">scroll down for previous reviews</h3>
+<div class="login-box1" style="overflow: scroll;">
+  <h2 class="l2"><center>Previous Reviews</center></h2>
+  <h1 style="font-family: sans-serif;color:white;"> PIZZA</h1>
+  <div class="rate" style="margin-left: 660px">
+    {% for x in range(cnts) %}
+    <span class="fa fa-star checked fa-3x"></span>
+    {% endfor %}
+    {% for x in range(cnty) %}
+    <span class="fa fa-star fa-3x"></span>
+    {% endfor %}
+    
+  </div>
+
+<div class="container d-flex justify-content-center mt-100 mb-100" style="color: white; " >
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-size: 30px">Recent Comments</h4>
+                    <h6 class="card-subtitle">Latest Comments section by users</h6>
+                </div>
+                
+                    
+                    {% for spec in speec %}
+                    <div class="d-flex flex-row comment-row">
+                        <div class="p-2"><span class="round"><img src="/static/me.jpg" alt="user" width="50"></span></div>
+                        <div class="comment-text w-100">
+                            <h5>{{spec['Name']}}</h5>
+                            <div class="comment-footer"> <span class="date">{{spec['Entry_time']}}--{{spec['Entry_date']}}</span> <a href="#" data-abc="true"><i class="fa fa-pencil"></i></a> <a href="#" data-abc="true"><i class="fa fa-rotate-right"></i></a> <a href="#" data-abc="true"><i class="fa fa-heart"></i></a> </span> </div>
+                            <p class="m-b-5 m-t-10"> {{spec['Review']}} </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{%  extends 'login.html' %}
+{% block head %}{% endblock %}
+
+{% block body %}
+    
+<center>
+	<div class ="l1">
+	<b><p  class="l2">SIGN IN</p>
+	</b>
+    <form method="POST" action="/log">
+	<input type="text" placeholder="Email Address" name="usermail" class="l3" required><br>
+	<input type="number" placeholder="Phone" name="password" required><br>
+   		<a href="homepage.html" <button><input type="submit" name="sub" class="l4"></button></a><br><br>
+		<a href="new log.html" class="l5">forget your password?</a></form>
+		</div>
+</center>
+<center class="l6">Don't have an account&nbsp?&nbsp<a href="new log.html" class="l7">Signup</a></center>
+<center><a href= "r8.html"> HOME </a></center>
+{% endblock %}

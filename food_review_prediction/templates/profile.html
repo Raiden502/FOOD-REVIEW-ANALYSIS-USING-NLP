@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, Ample lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Ample admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Ample Admin Lite Template by WrapPixel</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="{{url_for("static",filename=('style.min.css')) }}" rel="stylesheet">
+    <script src="{{url_for("static", filename=('plugins/bower_components/jquery/dist/jquery.min.js'))}}"></script>
+    <style>
+        .select-user-input{
+            margin:5% 0 0 40%;
+            background-color: cornflowerblue;
+        }
+    </style>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="dashboard.html">
+                        <!-- Logo icon -->
+                        
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <form  method="POST" action="/admin">
+                                
+                                  <input type='hidden'  name='uname' value='admin'>
+                                  <button type="submit" style="border: none; background-color: white;" ><img src="/static/logo3.png" height="40px" width="120px" > </button>
+                                 
+                            </form>
+                            
+                            
+                            </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
+                                href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ml-auto d-flex align-items-center">
+
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li>
+                            <a class="profile-pic" href="#">
+                                <img src="/static/me.jpg" alt="user-img" width="46"
+                                    class="img-circle"><span class="text-white font-medium">Pavan</span></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title text-uppercase font-medium font-14">Profile page</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <script>
+                function userselect(value) {
+                    if (value == 1) {
+                        $("#user1").show();
+                        $("#user2,#user3,#user4,#user5").hide();
+                    }else if (value == 2) {
+                        $("#user2").show();
+                        $("#user1,#user3,#user4,#user5").hide();
+                    }else if (value == 3) {
+                        $("#user3").show();
+                        $("#user2,#user1,#user4,#user5").hide();                        
+                    }else if (value == 4) {
+                        $("#user4").show();
+                        $("#user2,#user3,#user1,#user5").hide();
+                    }else if (value == 5) {
+                        $("#user5").show();
+                        $("#user2,#user3,#user4,#user1").hide();
+                    }  
+                }
+            </script>
+            <select id="user" onchange="userselect(this.value)" class="form-control col-3 select-user-input" >
+                    <option value=""> ----- Select Category ----- </option>
+                    <option value="1">ML-Engineer</option>
+                    <option value="2">Back-End developer</option>
+                    <option value="3">Front-End developer</option>
+                    <option value="4">UI-Designer</option>
+                    <option value="5">Front-End developer</option>
+            </select>
+
+            <div class="container-fluid" id="user1">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        
+                            <div class="user-bg">
+                                
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="static/ar.jpeg" style="height:160px;width:160px; border-radius: 50%; margin-left: 100px; margin-top: 40px;" class="thumb-lg img-circle" alt="img"></a>
+                                        
+                                    </div>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Full Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>TURUBATI ARAVIND</h3> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>aravindturubati@gmail.com</h3>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>+91 7569845271</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Participation</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>ML-Engineer</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">technologies used</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>PYTHON,JUPYTER</h3>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <div class="container-fluid" id="user2"  style="display: none;">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        
+                            <div class="user-bg">
+                                
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="static/me.jpg" style="height:160px;width:160px; border-radius: 50%; margin-left: 100px; margin-top: 40px;" class="thumb-lg img-circle" alt="img"></a>
+                                        
+                                    </div>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Full Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>BARUGALA PAVAN SAI</h3> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>pavansaibarugala@gmail.com</h3>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>+91 8186076359</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Participation</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>Back-End Developer</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">technologies used</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>FLASK,PYTHON,JINJA 2,MONGODB</h3>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ========================================================================================== -->
+            </div>
+            <div class="container-fluid" id="user3"  style="display: none;">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        
+                            <div class="user-bg">
+                                
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="static/ro.jpeg" style="height:160px;width:160px; border-radius: 50%; margin-left: 100px; margin-top: 40px;" class="thumb-lg img-circle" alt="img"></a>
+                                        
+                                    </div>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Full Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>BALLI ROHITH</h3> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>rohithballi@gmail.com</h3>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>+91 8186076359</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Participation</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>Front-End Developer</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">technologies used</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>HTMl,CSS,BOOTSTRAP</h3>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ======================================End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <div class="container-fluid" id="user4"  style="display: none;">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        
+                            <div class="user-bg">
+                                
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="static/vm.jpeg" style="height:160px;width:160px; border-radius: 50%; margin-left: 100px; margin-top: 40px;" class="thumb-lg img-circle" alt="img"></a>
+                                        
+                                    </div>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Full Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>LABHALA VAMSI</h3> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>vamsilabhala8@gmail.com</h3>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>+91 9573657391</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Participation</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>UI-Designer</h3>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ======================================  <!-- ============================================================== -->
+            </div>
+            <div class="container-fluid" id="user5"  style="display: none;">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        
+                            <div class="user-bg">
+                                
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="static/me.jpg" style="height:160px;width:160px; border-radius: 50%; margin-left: 100px; margin-top: 40px;" class="thumb-lg img-circle" alt="img"></a>
+                                        
+                                    </div>
+                                
+                            </div>
+                            
+                        
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Full Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>BARUGALA PAVAN SAI</h3> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="example-email" class="col-md-12 p-0">Email</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>pavansaibarugala@gmail.com</h3>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Phone No</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>+91 8186076359</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Participation</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>Back-End Developer</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">technologies used</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <h3>Flask,Python,Jinja 2,Mongodb</h3>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ====================================== ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center"> 2020 © Ample Admin brought to you by <a
+                    href="https://www.wrappixel.com/">wrappixel.com</a>
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    -- Bootstrap tether Core JavaScript -->
+  
+    <!--Wave Effects -->
+    
+
+
+
+   
+    <script src="{{url_for("static", filename=('js/app-style-switcher.js'))}}"></script>
+
+
+
+    <script src="{{url_for("static", filename=('bootstrap/dist/js/bootstrap.min.js'))}}"></script>
+    
+
+
+
+    <script src="{{url_for("static", filename=('plugins/bower_components/popper.js/dist/umd/popper.min.js'))}}"></script>
+
+    <script src="{{url_for("static", filename=('plugins/bower_components/jquery/dist/jquery.min.js'))}}"></script>
+
+    <!--Wave Effects -->
+   
+    <script src="{{url_for("static", filename=('js/waves.js'))}}"></script>
+
+    <script src="{{url_for("static", filename=('js/sidebarmenu.js'))}}"></script>
+
+
+
+    <script src="{{url_for("static", filename=('js/custom.js'))}}"></script>
+
+
+
+
+</body>
+
+</html>

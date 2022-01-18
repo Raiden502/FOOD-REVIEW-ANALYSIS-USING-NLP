@@ -1,0 +1,36 @@
+{% extends 'test.html' %}
+{% block head %}{% endblock %}
+
+{% block body %}
+<div class="all">
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      <form action="/action_page.php" class="select">
+        <label for="cars">Choose a item:</label>
+        <select name="cars" id="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+        
+      </form>
+      {% for x in reslt %}
+    <div class="box">
+    
+    <ul>
+        <li><b>{{x["Name"]}}</b></li>
+        
+        <li><strong>{{x["Entry_time"]}}</strong></li>
+    </ul>
+    <h4 class="center">{{x["Review"]}}</h4>
+    
+</div><br>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>
+task
+</title> 
+<link rel="stylesheet" href="{{url_for("static",filename=('login.css')) }}">
+<script type = "text/javascript" >
+	function preventBack() { window.history.forward(); }
+	setTimeout("preventBack()", 0);
+	window.onunload = function () { null };
+	</script>
+{% block head %}{% endblock %}
+</head>
+<body class="l8">
+	{% block body %}{% endblock %}
+</body>
+</html>

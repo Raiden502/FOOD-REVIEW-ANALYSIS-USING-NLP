@@ -1,0 +1,47 @@
+{%  extends 'review.html' %}
+{% block head %}{% endblock %}
+
+{% block body %}
+    <center><table>
+        <tr><form autocomplete="off" method='POST' action='/insert'>
+            <input type="text" autocomplete="off" name="user" placeholder="Enter your name" style="height:150px ;width:380px;" required><br>
+            <input type="text" autocomplete="off" name="review" placeholder="type  your review" style="height:190px ;width:380px;" required>
+            
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="item" required>
+                  <option value="">select</option> 
+                  <optgroup label="Lotus hotel"  >    
+                  <option value="chicken">chicken</option>
+                  <option value="mutton">mutton</option>
+                  <option value="fish">fish</option></optgroup> 
+                  <optgroup label="alpha"  >    
+                    <option value="chicken">chicken</option>
+                    <option value="mutton">mutton</option>
+                    <option value="fish">fish</option></optgroup> 
+                  <optgroup label="nova"  >    
+                        <option value="chicken">chicken</option>
+                        <option value="mutton">mutton</option>
+                        <option value="fish">fish</option></optgroup> 
+                </select>
+            </div>
+            <br>
+            
+            <button type="submit" name="sub" >submit</button></tr></form>
+    </table></center>
+    
+    {% for x in vers %}
+    <ul class="list-group list-group-horizontal-lg">
+        <li class="list-group-item  list-group-item-primary" style="color: rgb(6, 6, 56);">{{x["Name"]}}</li>
+        <li class="list-group-item">{{x["Item"]}}</li>
+        <li class="list-group-item">{{x["Review"]}}</li>
+        <li class="list-group-item">{{x["Entry_time"]}}</li>
+        <li class="list-group-item">{{x["Entry_date"]}}</li>
+    </ul>
+    
+    {% endfor %}
+    
+{% endblock %}
