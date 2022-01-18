@@ -1,3 +1,4 @@
+# FOOD REVIEW ANALYSIS USING NLP
 There has been a rise in accessibility of online applications and a surge across social platforms for
 opinion sharing, online review websites, and personal blogs, which have captured the attention of 
 stakeholders such as customers, organizations, and governments to analyze and explore these opinions. 
